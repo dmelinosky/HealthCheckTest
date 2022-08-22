@@ -15,6 +15,13 @@ services:
       dockerfile: Api2/Dockerfile
     container_name: api2
 
+  api3:
+    image: ${DOCKER_REGISTRY-}api3
+    build:
+      context: .
+      dockerfile: Api3/Dockerfile
+    container_name: api3
+
   healthui:
     image: ${DOCKER_REGISTRY-}healthui
     build:
@@ -52,5 +59,7 @@ services:
     volumes:
       - healthsqlstorage:/var/opt/mssql
 
+
 volumes:
   healthsqlstorage:
+

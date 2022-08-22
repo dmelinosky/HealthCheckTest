@@ -11,6 +11,13 @@ builder.Services
         });
 
         setup.SetHeaderText("This is not the DOCKER image.");
+
+        setup.AddWebhookNotification(
+            "Fake Email Service",
+            uri: "http://api3/api/webhookreport/outage",
+            payload: "{ \"message\": \"Webhook report for [[LIVENESS]]: [[FAILURE]] - Description: [[DESCRIPTIONS]]\"}",
+            restorePayload: "{ \"message\": \"[[LIVENESS]] is back to life\"}"
+            );
     })
     .AddSqlServerStorage(builder.Configuration.GetConnectionString("Health"));
 
