@@ -1,0 +1,56 @@
+version: '3.4'
+
+services:
+  api1:
+    image: ${DOCKER_REGISTRY-}api1
+    build:
+      context: .
+      dockerfile: Api1/Dockerfile
+    container_name: api1
+
+  api2:
+    image: ${DOCKER_REGISTRY-}api2
+    build:
+      context: .
+      dockerfile: Api2/Dockerfile
+    container_name: api2
+
+  healthui:
+    image: ${DOCKER_REGISTRY-}healthui
+    build:
+      context: .
+      dockerfile: HealthUI/Dockerfile
+    container_name: healthui
+
+  healthchecks:
+    image: xabarilcoding/healthchecksui
+    container_name: healthchecks
+    depends_on:
+      - sqlserver
+    environment:
+      - storage_provider=SqlServer
+      - storage_connection=Server=sqlserver,1433;User Id=sa;Password=Password12!;Initial Catalog=DockerUI
+      - Logging:LogLevel:Default=Debug
+      - Logging:LogLevel:Microsoft=Warning
+      - Logging:LogLevel:HealthChecks=Debug
+      - HealthChecksUI:HealthChecks:0:Name=api1
+      - HealthChecksUI:HealthChecks:0:Uri=http://api1/health
+      - HealthChecksUI:HealthChecks:1:Name=api2
+      - HealthChecksUI:HealthChecks:1:Uri=http://api2/health
+      - ui_path=/
+    ports:
+      - 5200:80
+  
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Password12!
+    ports:
+      - 1433:1433
+    volumes:
+      - healthsqlstorage:/var/opt/mssql
+
+volumes:
+  healthsqlstorage:

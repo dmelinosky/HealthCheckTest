@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api1", "Api1\Api1.csproj", "{C33241B1-4F47-49C2-89BB-A958D83CA612}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{EC3BD8F7-EEF2-4EA2-88AA-0EC19F40D4F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api2", "Api2\Api2.csproj", "{BC5B8061-AE2C-444C-B166-69D6E4181580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthUI", "HealthUI\HealthUI.csproj", "{9CE2B40F-BE3D-461E-9185-CF348624D0CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C33241B1-4F47-49C2-89BB-A958D83CA612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33241B1-4F47-49C2-89BB-A958D83CA612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33241B1-4F47-49C2-89BB-A958D83CA612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33241B1-4F47-49C2-89BB-A958D83CA612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3BD8F7-EEF2-4EA2-88AA-0EC19F40D4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3BD8F7-EEF2-4EA2-88AA-0EC19F40D4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3BD8F7-EEF2-4EA2-88AA-0EC19F40D4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3BD8F7-EEF2-4EA2-88AA-0EC19F40D4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5B8061-AE2C-444C-B166-69D6E4181580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5B8061-AE2C-444C-B166-69D6E4181580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5B8061-AE2C-444C-B166-69D6E4181580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5B8061-AE2C-444C-B166-69D6E4181580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE2B40F-BE3D-461E-9185-CF348624D0CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE2B40F-BE3D-461E-9185-CF348624D0CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE2B40F-BE3D-461E-9185-CF348624D0CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE2B40F-BE3D-461E-9185-CF348624D0CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D147D53-0504-4F08-BCAC-CA87FCC95A38}
+	EndGlobalSection
+EndGlobal
