@@ -30,6 +30,9 @@ services:
       - HealthChecksUI__HealthChecks__0__Uri=http://api1/health
       - HealthChecksUI__HealthChecks__1__Name=api2
       - HealthChecksUI__HealthChecks__1__Uri=http://api2/health
+      - HealthChecksUI__HealthChecks__2__Name=api3
+      - HealthChecksUI__HealthChecks__2__Uri=http://api3/health
+
     ports:
       #- "443"
       - "80"

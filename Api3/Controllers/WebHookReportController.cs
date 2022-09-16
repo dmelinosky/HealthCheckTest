@@ -7,13 +7,13 @@
     public class WebHookReportController : ControllerBase
     {
         [HttpPost("outage", Name = nameof(ReportOutage))]
-        public async Task<IActionResult> ReportOutage([FromBody] ReportModel model, [FromServices] ILogger<WebHookReportController> logger)
+        public Task<IActionResult> ReportOutage([FromBody] ReportModel model, [FromServices] ILogger<WebHookReportController> logger)
         {
             logger.LogInformation("Message Received");
 
             logger.LogInformation(model.Message);
 
-            return this.Accepted();
+            return Task.FromResult<IActionResult>(this.Accepted());
         }
     }
 

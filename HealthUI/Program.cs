@@ -5,6 +5,8 @@ builder.Services
     {
         setup.MaximumHistoryEntriesPerEndpoint(50);
 
+        setup.SetEvaluationTimeInSeconds(120);
+
         setup.ConfigureApiEndpointHttpclient((sp, client) =>
         {
             client.Timeout = TimeSpan.FromSeconds(5);

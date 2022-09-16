@@ -1,24 +1,19 @@
-using Api1.HealthChecks;
-
-using HealthChecks.UI.Client;
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 builder.Services.AddHealthChecks()
-    .AddTypeActivatedCheck<WeirdHealthCheck>(
-        "Service 1",
-        failureStatus: Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Unhealthy,
-        tags: new[] { "service1" },
-        args: new object[] { 0, 20, "Service one available", "Service one unavailable" })
-    .AddTypeActivatedCheck<WeirdHealthCheck>(
-        "Service 2",
-        failureStatus: Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Degraded,
-        tags: new[] { "service2" },
-        args: new object[] { 40, 59, "Service two available", "Service two unavailable" })
+    ////.AddTypeActivatedCheck<WeirdHealthCheck>(
+    ////    "Service 1",
+    ////    failureStatus: Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Unhealthy,
+    ////    tags: new[] { "service1" },
+    ////    args: new object[] { 0, 20, "Service one available", "Service one unavailable" })
+    ////.AddTypeActivatedCheck<WeirdHealthCheck>(
+    ////    "Service 2",
+    ////    failureStatus: Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Degraded,
+    ////    tags: new[] { "service2" },
+    ////    args: new object[] { 40, 59, "Service two available", "Service two unavailable" })
     .AddSqlServer(
         builder.Configuration.GetConnectionString("db"),
         name: "DockerUI db",

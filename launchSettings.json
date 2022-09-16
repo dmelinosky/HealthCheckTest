@@ -7,7 +7,6 @@
         "api1": "StartWithoutDebugging",
         "api2": "StartWithoutDebugging",
         "api3": "StartDebugging",
-        "healthchecks": "StartWithoutDebugging",
         "healthui": "StartWithoutDebugging",
         "sqlserver": "StartWithoutDebugging"
       }
